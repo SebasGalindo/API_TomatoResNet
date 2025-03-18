@@ -1,0 +1,10 @@
+Acaro_Araña_Roja_Dos_Puntos
+Mancha_Bacteriana
+Mancha_Diana
+Mancha_Foliar_Por_Septoria
+Moho_Foliar
+Saludable
+Tizon_Tardio
+Tizon_Temprano
+Virus_Mosaico
+Virus_rizado_amarillo
