@@ -5,6 +5,13 @@ import io
 
 app = Flask(__name__)
 
+model = load_model()
+print("Modelo cargado")
+transform_train, transform_val = image_transforms()
+print("Transformaciones de imagen cargadas")
+categories = get_categories()
+print("Categorías cargadas")
+
 @app.route('/upload', methods=['POST'])
 def upload_image():
     # 'image' es la clave con la que se envía el archivo en el formulario
@@ -29,9 +36,4 @@ def upload_image():
     return jsonify({"category": category})
 
 if __name__ == '__main__':
-    
-    model = load_model()
-    transform_train, transform_val = image_transforms()
-    categories = get_categories()
-    
     app.run(debug=True)

@@ -1,4 +1,3 @@
-import os
 import torch # For the model
 import torch.nn as nn # For the neural network
 from torchvision import datasets, transforms # For the datasets and transformations
@@ -147,7 +146,7 @@ def train_model(model, train_loader, val_loader, epochs=10):
     print("Training completed.")
     return model
 
-def save_model(model, path = "Resources\\TomatoResNet50.pth"):
+def save_model(model, path = "Resources/TomatoResNet50.pth"):
     torch.save(model.state_dict(), path)
     print(f"Model saved at {path}")
 
@@ -183,7 +182,7 @@ def test_model_with_image(model, image, transform_val):
         _, preds = torch.max(outputs, 1)
         return preds.item()
     
-def load_model(path = "Resources\\TomatoResNet50.pth"):
+def load_model(path = "Resources/TomatoResNet50.pth"):
     model = create_model()
     model, device = set_model_device(model)
     state_dict = torch.load(path, map_location=device)
@@ -210,7 +209,7 @@ def set_model_device(model):
         print(f"Using {torch.cuda.device_count()} GPUs")
     return model, device
 
-def get_categories(path = "Resources\\categories.txt"):
+def get_categories(path = "Resources/categories.txt"):
     with open(path, "r", encoding= "utf-8") as file:
         categories = file.read().split("\n")
     return categories
